@@ -1,2 +1,1 @@
-"# Battery" 
-"# Battery" 
+Detect Battery Status
