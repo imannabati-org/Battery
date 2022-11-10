@@ -1,0 +1,122 @@
+:root {
+    --blue: #287bff;
+    --blue2: #0253d6;
+    --white: #fff;
+    --white2: #e9e9e9;
+    --whiteBack: #fafafa;
+    --grey: #f5f5f5;
+    --black: #000000;
+    --black2: #999;
+    --blackBack: #1f1f1f;
+    --blackBox: #141414;
+    --unsetB: rgba(255, 255, 255, 0);
+    --Shadow: rgba(0, 0, 0, 0.10);
+    --Shadow2: rgba(0, 0, 0, 0.40);
+    --ShadowWhite: rgba(255, 255, 255, 0.2);
+    --yellow: rgba(255, 255, 0, 0.719);
+    --green: #4aff01;
+    --red: #ff0000;
+    --danger: #bb0909;
+    --danger2: #720f0f;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+.imarana .container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.imarana #battery {
+    box-sizing: content-box;
+    height: 7.8em;
+    width: 17.5em;
+    border: 0.6em solid var(--blue);
+    margin: auto;
+    border-radius: 0.6em;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.imarana .bordActive {
+    animation: border-green 3s infinite linear;
+}
+
+.imarana #battery:before {
+    position: absolute;
+    content: "";
+    height: 5em;
+    width: 1.1em;
+    background-color: var(--blue);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: -1.6em;
+    border-radius: 0 0.3em 0.3em 0;
+}
+
+.imarana .bordActive .battery:before {
+    background-color: var(--green);
+}
+
+.imarana #charge {
+    position: absolute;
+    height: 6.5em;
+    width: 16.25em;
+    background-color: var(--blue);
+    top: 0.6em;
+    left: 0.6em;
+}
+
+.imarana #charge-level {
+    position: absolute;
+    font-size: 6em;
+    font-weight: 500;
+}
+
+.imarana #charging-time {
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 1.4em;
+}
+
+.imarana .batactive {
+    animation: charge-animation 3s infinite linear;
+}
+
+@keyframes charge-animation {
+    0% {
+        width: 0;
+        background-color: var(--green);
+    }
+    100% {
+        width: 16.25em;
+        background-color: var(--green);
+    }
+}
+
+@keyframes border-green {
+    0% {
+        border: 0.6em solid var(--green);
+    }
+    100% {
+        border: 0.6em solid var(--green);
+    }
+}
+
+@keyframes back-green {
+    0% {
+        background-color: var(--green);
+    }
+    100% {
+        background-color: var(--green);
+    }
+}
